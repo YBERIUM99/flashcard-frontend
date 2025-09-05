@@ -19,7 +19,8 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route  path="/dashboard" element={token ? <Dashboard /> : <Navigate to="/login" />}/>
           </Routes>
         </AuthProvider>
       </BrowserRouter>
